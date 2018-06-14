@@ -1,0 +1,30 @@
+{
+  "geoobjects":
+  [
+    {
+      "name": "Productive Edge",
+      "lat": 41.890637,
+      "long": -87.627443
+    },
+    {
+      "name": "Trump Tower",
+      "lat": 41.888803,
+      "long": -87.626312
+    },
+    {
+      "name": "Tribune Tower",
+      "lat": 41.890380,
+      "long": -87.623674
+    },
+    {
+      "name": "Apple Store",
+      "lat": 41.889501,
+      "long": -87.622852
+    },
+    {
+      "name": "Wrigley Building",
+      "lat": 41.889487,
+      "long": -87.624915
+    }
+  ]
+}
