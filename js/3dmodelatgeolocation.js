@@ -5,6 +5,7 @@ var geoObj = JSON.parse(geoString);
 //declare variables
 var loc0;
 var loc1;
+var loc2;
 var modelEarth;
 var indicatorImage;
 var indicatorDrawable;
