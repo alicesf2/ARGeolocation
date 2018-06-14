@@ -66,8 +66,8 @@ var World = {
   },
 
   //create geoobjects out of models at a certain location
-  createModel: function createModelFn(objName, loc) {
-    objName = new AR.GeoObject(loc, {
+  createModel: function createModelFn(obj, loc) {
+    obj = new AR.GeoObject(loc, {
       drawables: {
         cam: [modelEarth],
         indicator: [indicatorDrawable]
@@ -79,42 +79,26 @@ var World = {
   //initialize user position and obj array
   initPosition: function initPositionFn() {
     if (loc0.distanceToUser() <= 10) {
-      objArr.push(obj0);
+      createModel(obj0, loc0);
     }
 
     if (loc1.distanceToUser() <= 10) {
-      objArr.push(obj1);
+      createModel(obj1, loc1);
     }
 
     if (loc2.distanceToUser() <= 10) {
-      objArr.push(obj2);
+      createModel(obj2, loc2);
     }
     //console.log("position initialized");
   },
 
   //adds and removes objects from objArr depending on how far user is from them
   scan: function scanFn() {
-    //removes objects from objArr if they're out of range
-    for (var i = 0; i < objArr.length; i++) {
-      if (locArr[i].distanceToUser() > 10) {
-        objArr.pop(objArr[i]);
-      }
-    }
+    //how to delete objects??
 
-    //adds objects to objArr
-    for (var i = 0; i < locArr.length; i++) {
-      if (locArr[i].distanceToUser() <= 10) {
-        objArr.push(objArr[i]);
-      }
-    }
+    //respawns objects
+    this.initPosition();
     this.displayModels();
-  },
-
-  //spawns models at specified location
-  displayModels: function displayModels() {
-    for (var i = 0; i < objArr.length; i++) {
-      this.createModel(objArr[i], locArr[i]);
-    }
   },
 };
 
