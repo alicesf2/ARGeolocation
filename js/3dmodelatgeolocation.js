@@ -11,10 +11,6 @@ var indicatorDrawable;
 var obj0;
 var obj1;
 var obj2;
-//stores all geoobject locations
-var locArr = [];
-//stores all objects in display
-var objArr = [];
 
 //instantiate world object
 var World = {
@@ -32,11 +28,8 @@ var World = {
   //create geolocations out of latitude and longitude from json
   assignLoc: function assignLocFn() {
     loc0 = new AR.GeoLocation(geoObj.geoobjects[0].lat, geoObj.geoobjects[0].long);
-    locArr.push(loc0);
     loc1 = new AR.GeoLocation(geoObj.geoobjects[1].lat, geoObj.geoobjects[1].long);
-    locArr.push(loc1);
     loc2 = new AR.GeoLocation(geoObj.geoobjects[2].lat, geoObj.geoobjects[2].long);
-    locArr.push(loc2);
     //console.log("locations assigned");
   },
 
