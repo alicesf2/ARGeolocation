@@ -24,9 +24,7 @@ var World = {
     this.loadModels();
     this.initPosition();
     //rescans every 5 sec
-    setInterval(function() {
-      this.scan();
-    }, 5000);
+    setInterval(this.scan(), 5000);
     //console.log("world initialized");
   },
 
@@ -93,9 +91,9 @@ var World = {
   //adds and removes objects from objArr depending on how far user is from them
   scan: function scanFn() {
     //how to delete objects??
-    obj0.destroy();
-    obj1.destroy();
-    obj2.destroy();
+    destroy(obj0);
+    destroy(obj1);
+    destroy(obj2);
 
     //respawns objects
     this.initPosition();
